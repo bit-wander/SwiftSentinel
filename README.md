@@ -1,15 +1,15 @@
-# 🚁 UAV Object Detection and Tracking
+# UAV Detection
 
-An end-to-end computer vision pipeline for detecting and tracking Unmanned Aerial Vehicles (UAVs) using YOLOv8. 
+UAV detection is a critical task in modern surveillance and security systems. The increasing use of UAVs for various purposes has led to a growing concern about their potential misuse, such as terrorism, smuggling, and privacy violations. Therefore, it is essential to develop a robust UAV detection system that can detect and track UAVs in real-time. This project is developed for handling these challenges and providing a solution for UAV detection and tracking. 
 
-This project provides a complete framework covering dataset preparation, model training, evaluation, real-time tracking, and edge device export. It is built to be highly modular, reproducible, and ready for deployment on UAV hardware.
+
 
 ---
 
 ## 📁 Project Structure
 
 ```text
-object_detection_and_tracking/
+uav_detection/
 ├── configs/                  # YAML configuration files
 │   ├── train_config.yaml     # Training parameters
 │   ├── test_config.yaml      # Evaluation metrics parameters
@@ -32,8 +32,8 @@ object_detection_and_tracking/
 
 1. **Clone the repository and navigate to the project directory:**
    ```bash
-   git clone <repository-url>
-   cd object_detection_and_tracking
+   git clone https://github.com/bit-wander/SwiftSentinel.git 
+   cd SwiftSentinel 
    ```
 
 2. **Create a virtual environment (Recommended):**
@@ -51,15 +51,14 @@ object_detection_and_tracking/
 
 ## 📊 Dataset Information
 
-The model is trained on a custom dataset (`master_dataset`) consisting of aerial imagery for UAV detection. 
+The model is trained on a custom dataset consisting of aerial imagery for UAV detection.  
 
 ### Classes & Backgrounds
 - `0`: `uav` (Unmanned Aerial Vehicle)
 - **Background Images**: The dataset intentionally includes background images (images with no UAVs, represented by empty or missing label files) to teach the model to reduce False Positives (FP) during inference.
 
 ### Dataset Distribution
-The combined dataset contains a total of **15,865 images**, carefully split and balanced to include background examples:
-
+The combined dataset contains a total of **15,865 images**:
 | Split | Total Images | UAV Images | Background Images |
 | :--- | :--- | :--- | :--- |
 | **Train** | 11,921 | 11,567 | 354 |
@@ -143,4 +142,23 @@ Deploying to a Jetson Nano, Raspberry Pi, or other edge devices requires optimiz
 ```bash
 python src/export.py --weights runs/detect/train/weights/best.pt --format onnx
 ```
+
+---
+
+## 📈 Results
+
+### Quantitative Analysis
+The model's training performance and evaluation metrics across all epochs are visualized below, detailing losses, precision, recall, and mAP scores.
+
+![Training Results](assets/results/results.png)
+
+### Qualitative Analysis
+Below are sample inference results demonstrating the model's capability to detect UAVs accurately:
+
+<p align="center">
+  <img src="assets/results/detection_0.jpg" width="31%" alt="UAV Detection Sample 0" />
+  <img src="assets/results/detection_1.jpg" width="31%" alt="UAV Detection Sample 1" />
+  <img src="assets/results/detection_2.jpg" width="31%" alt="UAV Detection Sample 2" />
+</p>
+
 

@@ -12,7 +12,7 @@ inference:
   
   # Tracking Settings
   # If track is True, the model will assign consistent IDs to detected drones across frames
-  track: True 
+  track: False 
   tracker: "bytetrack.yaml" # Options: 'bytetrack.yaml' or 'botsort.yaml'
   
   # Output settings
