@@ -45,6 +45,7 @@ runs/
 # Datasets and Media
 datasets/
 data/
+master_dataset/
 *.mp4
 *.avi
 *.jpg
