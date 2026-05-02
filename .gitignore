@@ -1,0 +1,61 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# YOLO / Ultralytics Output
+runs/
+*.pt
+*.onnx
+*.engine
+*.tflite
+*.mlmodel
+*.pb
+
+# Datasets and Media
+datasets/
+data/
+*.mp4
+*.avi
+*.jpg
+*.jpeg
+*.png
+*.zip
+*.tar.gz
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints
+
+# OS generated files
+.DS_Store
+Thumbs.db

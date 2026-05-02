@@ -1,0 +1,13 @@
+dataset:
+  # Update this path to where the dataset is actually located locally
+  yaml_path: "data.yaml"
+
+testing:
+  # Path to the trained model weights
+  model_weights: "runs/detect/train/weights/best.pt" 
+  imgsz: 640
+  batch: 32
+  device: "0" # Example: "0,1" for 2 GPUs, "0" for single GPU, or "cpu" for CPU
+  conf: 0.25 # Confidence threshold for predictions
+  iou: 0.6   # NMS IoU threshold
+  split: "test" # Split to evaluate on: 'val' or 'test'

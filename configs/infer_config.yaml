@@ -1,0 +1,21 @@
+inference:
+  # Path to the trained model weights
+  model_weights: "runs/detect/train/weights/best.pt"
+  
+  # Source can be an image, directory of images, video file, or 0 for webcam
+  source: "data/test_video.mp4" 
+  
+  imgsz: 640
+  conf: 0.25 # Confidence threshold
+  iou: 0.45  # NMS IOU threshold
+  device: "0" # "0" for single GPU, "cpu" for CPU
+  
+  # Tracking Settings
+  # If track is True, the model will assign consistent IDs to detected drones across frames
+  track: True 
+  tracker: "bytetrack.yaml" # Options: 'bytetrack.yaml' or 'botsort.yaml'
+  
+  # Output settings
+  save_result: True  # Save annotated images/videos
+  save_txt: False    # Save bounding box coordinates to text files
+  show: False        # Display inference results on screen in real-time

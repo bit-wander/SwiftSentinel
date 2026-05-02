@@ -1,0 +1,23 @@
+dataset:
+  name: "my-custom-dataset"
+  version: 1
+  model_format: "yolov8"
+  # Update this path to where the dataset is actually located locally
+  # In the notebook, it was "/kaggle/input/datasets/bitwander/uav-detection/master_dataset/data.yaml"
+  yaml_path: "data.yaml"
+
+training:
+  model: "yolov8n.pt"
+  epochs: 100
+  imgsz: 640
+  batch: 64
+  workers: 4
+  device: "0" # Example: "0,1" for 2 GPUs or "0" for single GPU, "cpu" for CPU
+
+# Optional ClearML Configuration
+clearml:
+  # CLEARML_WEB_HOST: "https://app.clear.ml/"
+  # CLEARML_API_HOST: "https://api.clear.ml"
+  # CLEARML_FILES_HOST: "https://files.clear.ml"
+  # CLEARML_API_ACCESS_KEY: "your_access_key"
+  # CLEARML_API_SECRET_KEY: "your_secret_key"
