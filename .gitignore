@@ -54,6 +54,11 @@ master_dataset/
 *.zip
 *.tar.gz
 
+# Exceptions for README assets
+!assets/**/*.jpg
+!assets/**/*.png
+!assets/**/*.jpeg
+
 # Jupyter Notebooks checkpoints
 .ipynb_checkpoints
 
